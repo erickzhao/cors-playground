@@ -1,8 +1,14 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 class App extends Component {
+  async componentDidMount() {
+    const response = await fetch("http://localhost:5000");
+    const hello = await response.text();
+    console.log(hello);
+  }
+
   render() {
     return (
       <div className="App">
